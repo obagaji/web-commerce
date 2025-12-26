@@ -1,3 +1,32 @@
 spring:
+  cloud:
+    gateway:
+      routes:
+        - id: com-customer
+          uri: lb://com-customer
+          predicates:
+            - Path=/api/customer/**
+        - id: items-ecommerce
+          predicates:
+            - Path=/item/**
+          uri: lb://items-ecommerce
+  config:
+    import: optional:configserver:http://localhost:9100
   application:
     name: com-gateway
+  zipkin:
+    baseUrl: http://localhost:9411/
+server:
+  port: 9990
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+  instance:
+    hostname: localhost
+    serviceUrl: defaultZone:http://localhost:8761/eureka
+
+
+ 
+ 
+

@@ -12,7 +12,8 @@
 	<artifactId>web-commerce</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>web-commerce</name>
-	<description>web and inventry project with Spring Boot</description>
+	<packaging>pom</packaging>
+	<description>web and inventory project with Spring Boot</description>
 	<url/>
 	<licenses>
 		<license/>
